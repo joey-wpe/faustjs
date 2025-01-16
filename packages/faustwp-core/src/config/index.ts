@@ -76,6 +76,12 @@ export function normalizeConfig(_config: FaustConfig): FaustConfig {
     }
   });
 
+  if (cfg.experimentalToolbar) {
+    console.warn(
+      `[Faust.js] As the team shifts focus to new work on [Headless WordPress](https://github.com/wpengine/hwptoolkit), the Admin Toolbar, which was ~~experimental~~, will no longer be actively maintained. No further updates will be made.`,
+    );
+  }
+
   return extend(cfg, {});
 }
 

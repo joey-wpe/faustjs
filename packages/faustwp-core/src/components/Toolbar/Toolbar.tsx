@@ -217,6 +217,10 @@ export function ToolbarAwaitUser({ seedNode }: ToolbarProps) {
 export function Toolbar({ seedNode }: ToolbarProps) {
   const { isAuthenticated } = useAuth();
 
+  console.warn(
+    `[Faust.js] As the team shifts focus to new work on [Headless WordPress](https://github.com/wpengine/hwptoolkit), the Admin Toolbar, which was ~~experimental~~, will no longer be actively maintained. No further updates will be made.`,
+  );
+
   if (isAuthenticated !== true) {
     return null;
   }
