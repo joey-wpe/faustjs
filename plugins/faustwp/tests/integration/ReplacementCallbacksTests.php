@@ -92,6 +92,17 @@ class ReplacementCallbacksTests extends \WP_UnitTestCase {
 		self::assertSame( 10, has_action( 'wp_calculate_image_srcset', 'WPE\FaustWP\Replacement\image_source_srcset_replacement' ) );
 	}
 
+
+	/**
+	 * Test to make sure content rep can accept null values
+	 */
+	public function test_content_replacement_for_different_types() {
+		$this->assertNull(content_replacement( null));
+		$this->assertEmpty(content_replacement(''));
+		$content = '<p>This is a string with no URLs to be replaced.</p>';
+		$this->assertEquals($content, content_replacement($content));
+	}
+
 	/**
 	 * Tests content_replacement() returns original value when content replacement is not enabled.
 	 */
